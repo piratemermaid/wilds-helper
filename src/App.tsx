@@ -79,6 +79,16 @@ function App() {
               <Typography variant="h5" color="primary.100">
                 {selectedMonsterData.name}
               </Typography>
+              <Typography
+                variant="h6"
+                sx={{
+                  fontWeight: 600,
+                  textTransform: 'uppercase',
+                  fontSize: '1rem',
+                }}
+              >
+                Defense
+              </Typography>
               <DataSection
                 title="Weapon Elements"
                 data={selectedMonsterData.weaponElements as string[]}
@@ -89,6 +99,16 @@ function App() {
               />
               <DataSection title="Items" data={selectedMonsterData.items} />
               <DataSection title="Skills" data={selectedMonsterData.skills} />
+              <Typography
+                variant="h6"
+                sx={{
+                  fontWeight: 600,
+                  textTransform: 'uppercase',
+                  fontSize: '1rem',
+                }}
+              >
+                Monster Info
+              </Typography>
               <DataSection
                 title="Abilities"
                 data={selectedMonsterData.abilities}
