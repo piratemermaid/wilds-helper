@@ -164,3 +164,5 @@ export const monsters = [
     skills: '',
   },
 ];
+
+export const monsterNameList = monsters.map((monster) => monster.name);

@@ -5,16 +5,28 @@ export const darkTheme = createTheme({
   palette: {
     mode: 'dark',
     primary: {
-      main: blue[200],
+      100: blue[500],
+      200: blue[600],
+      300: blue[700],
+      400: blue[800],
+      main: blue[900],
+    },
+    hoverPrimary: {
+      main: blue[300],
     },
     secondary: {
-      main: orange[300],
+      main: orange[200],
     },
     action: {
       disabled: grey[500],
     },
     background: {
       default: blueGrey[900],
+    },
+  },
+  typography: {
+    allVariants: {
+      color: grey[300],
     },
   },
 });
