@@ -37,7 +37,14 @@ function App() {
                 sx={{
                   p: 1,
                   m: 1,
-                  backgroundColor: 'primary.main',
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  backgroundImage: `url(https://monsterhunterwilds.wiki.fextralife.com/file/Monster-Hunter-Wilds/${name
+                    .toLowerCase()
+                    .replaceAll(
+                      ' ',
+                      '_'
+                    )}_monsters_mhwilds_wiki_guide200px.png)`,
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -50,7 +57,18 @@ function App() {
                   minHeight: '80px',
                 }}
               >
-                {name}
+                <Box sx={{}}>
+                  <Typography
+                    sx={{
+                      textShadow: '2px 2px 10px rgba(0, 0, 0, 0.9)',
+                      backgroundColor: 'secondary.main',
+                      p: 0.1,
+                      borderRadius: 2,
+                    }}
+                  >
+                    {name}
+                  </Typography>
+                </Box>
               </Box>
             </Grid2>
           ))}
@@ -108,6 +126,22 @@ const DataSection = ({ title, dataString }: DataSectionProps) => {
         {!!dataString ? dataString : '--'}
       </Typography>
     </Grid2>
+  );
+};
+
+type MonsterImageProps = { name: string };
+
+const MonsterImage = ({ name }: MonsterImageProps) => {
+  return (
+    <Box sx={{ width: '100%', height: '100%' }}>
+      <img
+        src={`https://monsterhunterwilds.wiki.fextralife.com/file/Monster-Hunter-Wilds/${name
+          .toLowerCase()
+          .replaceAll(' ', '_')}_monsters_mhwilds_wiki_guide200px.png`}
+        alt="Monster"
+        style={{ width: '100%', height: 'auto' }}
+      />
+    </Box>
   );
 };
 
