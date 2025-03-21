@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Grid2, Stack, Typography } from '@mui/material';
+import { Box, Grid2, List, Stack, Typography } from '@mui/material';
 
 import { monsters, monsterNameList } from '~/data';
 import './App.css';
@@ -80,21 +80,15 @@ function App() {
                 {selectedMonsterData.name}
               </Typography>
               <DataSection
-                title="Weapon"
-                dataString={selectedMonsterData.weapon}
+                title="Weapon Elements"
+                data={selectedMonsterData.weaponElements as string[]}
               />
               <DataSection
-                title="Armor"
-                dataString={selectedMonsterData.armor}
+                title="Resist Elements"
+                data={selectedMonsterData.resistElements as string[]}
               />
-              <DataSection
-                title="Items"
-                dataString={selectedMonsterData.items}
-              />
-              <DataSection
-                title="Skills"
-                dataString={selectedMonsterData.skills}
-              />
+              <DataSection title="Items" data={selectedMonsterData.items} />
+              <DataSection title="Skills" data={selectedMonsterData.skills} />
             </Stack>
           </Box>
         )}
@@ -105,18 +99,22 @@ function App() {
 
 type DataSectionProps = {
   title: string;
-  dataString?: string;
+  data: string[];
 };
 
-const DataSection = ({ title, dataString }: DataSectionProps) => {
+const DataSection = ({ title, data }: DataSectionProps) => {
   return (
-    <Grid2>
+    <Grid2 sx={{ textAlign: 'left' }}>
       <Typography variant="body2" color="secondary">
         {title}
       </Typography>
-      <Typography variant="body1">
-        {!!dataString ? dataString : '--'}
-      </Typography>
+      <List>
+        {data.map((item, index) => (
+          <Typography key={index} variant="body2" sx={{ pl: 1 }}>
+            {item}
+          </Typography>
+        ))}
+      </List>
     </Grid2>
   );
 };
