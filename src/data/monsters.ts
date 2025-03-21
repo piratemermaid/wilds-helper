@@ -6,6 +6,7 @@ interface Monster {
   resistElements: Element[];
   items: string[];
   skills: string[];
+  abilities: string[];
 }
 
 export const monsters: Monster[] = [
@@ -15,6 +16,7 @@ export const monsters: Monster[] = [
     resistElements: [],
     items: [],
     skills: [],
+    abilities: ['TODO'],
   },
   {
     name: 'Quematrice',
@@ -22,6 +24,7 @@ export const monsters: Monster[] = [
     resistElements: ['fire'],
     items: ['nulberry'],
     skills: ['fire resist', 'blight resist'],
+    abilities: ['TODO'],
   },
   {
     name: 'Lala Barina',
@@ -29,6 +32,7 @@ export const monsters: Monster[] = [
     resistElements: [],
     items: ['TODO'],
     skills: ['TODO'],
+    abilities: ['TODO'],
   },
   {
     name: 'Congalala',
@@ -41,6 +45,7 @@ export const monsters: Monster[] = [
       'blast resist',
       'stench resist',
     ],
+    abilities: ['TODO'],
   },
   {
     name: 'Balahara',
@@ -48,6 +53,7 @@ export const monsters: Monster[] = [
     resistElements: ['water'],
     items: ['nulberry'],
     skills: ['water resist', 'blight resist'],
+    abilities: ['TODO'],
   },
   {
     name: 'Doshaguma',
@@ -55,6 +61,7 @@ export const monsters: Monster[] = [
     resistElements: [],
     items: ['TODO'],
     skills: ['TODO'],
+    abilities: ['TODO'],
   },
   {
     name: 'Uth Duna',
@@ -62,6 +69,7 @@ export const monsters: Monster[] = [
     resistElements: ['water'],
     items: ['nulberry'],
     skills: ['water resist', 'blight resist'],
+    abilities: ['TODO'],
   },
   {
     name: 'Rompopolo',
@@ -69,6 +77,7 @@ export const monsters: Monster[] = [
     resistElements: [],
     items: ['antidote'],
     skills: ['poison resist'],
+    abilities: ['TODO'],
   },
   {
     name: 'Rey Dau',
@@ -76,6 +85,7 @@ export const monsters: Monster[] = [
     resistElements: ['TODO'],
     items: ['TODO'],
     skills: ['TODO'],
+    abilities: ['TODO'],
   },
   {
     name: 'Nerscylla',
@@ -83,6 +93,7 @@ export const monsters: Monster[] = [
     resistElements: ['TODO'],
     items: ['TODO'],
     skills: ['TODO'],
+    abilities: ['TODO'],
   },
   {
     name: 'Hirabami',
@@ -90,6 +101,7 @@ export const monsters: Monster[] = [
     resistElements: ['TODO'],
     items: ['TODO'],
     skills: ['TODO'],
+    abilities: ['TODO'],
   },
   {
     name: 'Ajarakan',
@@ -97,6 +109,7 @@ export const monsters: Monster[] = [
     resistElements: ['TODO'],
     items: ['TODO'],
     skills: ['TODO'],
+    abilities: ['TODO'],
   },
   {
     name: 'Nu Udra',
@@ -104,6 +117,7 @@ export const monsters: Monster[] = [
     resistElements: ['TODO'],
     items: ['TODO'],
     skills: ['TODO'],
+    abilities: ['TODO'],
   },
   {
     name: 'Guardian Doshaguma',
@@ -117,6 +131,7 @@ export const monsters: Monster[] = [
       'hardshell powder',
     ],
     skills: ['tremor resist', 'iron skin'],
+    abilities: ['TODO'],
   },
   {
     name: 'Guardian Rathalos',
@@ -124,6 +139,7 @@ export const monsters: Monster[] = [
     resistElements: ['TODO'],
     items: ['TODO'],
     skills: ['TODO'],
+    abilities: ['TODO'],
   },
   {
     name: 'Jin Dahaad',
@@ -131,6 +147,7 @@ export const monsters: Monster[] = [
     resistElements: ['TODO'],
     items: ['TODO'],
     skills: ['TODO'],
+    abilities: ['TODO'],
   },
   {
     name: 'Guardian Ebony Odogaron',
@@ -138,6 +155,7 @@ export const monsters: Monster[] = [
     resistElements: ['TODO'],
     items: ['TODO'],
     skills: ['TODO'],
+    abilities: ['TODO'],
   },
   {
     name: 'Xu Wu',
@@ -145,6 +163,7 @@ export const monsters: Monster[] = [
     resistElements: [],
     items: ['TODO'],
     skills: ['TODO'],
+    abilities: ['TODO'],
   },
   {
     name: 'Guardian Arkveld',
@@ -152,6 +171,7 @@ export const monsters: Monster[] = [
     resistElements: ['TODO'],
     items: ['TODO'],
     skills: ['TODO'],
+    abilities: ['TODO'],
   },
   {
     name: 'Zoh Shia',
@@ -159,6 +179,7 @@ export const monsters: Monster[] = [
     resistElements: ['TODO'],
     items: ['TODO'],
     skills: ['TODO'],
+    abilities: ['TODO'],
   },
   {
     name: 'Yian Kut-ku',
@@ -166,6 +187,15 @@ export const monsters: Monster[] = [
     resistElements: ['TODO'],
     items: ['TODO'],
     skills: ['TODO'],
+    abilities: ['TODO'],
+  },
+  {
+    name: 'Gypceros',
+    weaponElements: ['fire', 'ice'],
+    resistElements: [],
+    items: ['antidote'],
+    skills: ['windproof', 'poison resist', 'stun resist'],
+    abilities: ['Minor Wind Pressure', 'Poison', 'Flash'],
   },
   {
     name: 'Rathian',
@@ -173,6 +203,7 @@ export const monsters: Monster[] = [
     resistElements: ['fire'],
     items: ['earplugs', 'nulberry', 'antidote'],
     skills: ['windproof', 'fire resist', 'blight resist', 'poison resist'],
+    abilities: ['TODO'],
   },
   {
     name: 'Rathalos',
@@ -180,7 +211,17 @@ export const monsters: Monster[] = [
     resistElements: ['TODO'],
     items: ['TODO'],
     skills: ['TODO'],
+    abilities: ['TODO'],
   },
+
+  // {
+  //   name:'Template',
+  //   weaponElements: ['TODO'],
+  //   resistElements: ['TODO'],
+  //   items: ['TODO'],
+  //   skills: ['TODO'],
+  //   abilities:['TODO']
+  // }
 ];
 
 export const monsterNameList = monsters.map((monster) => monster.name);

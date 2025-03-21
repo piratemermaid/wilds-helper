@@ -89,6 +89,10 @@ function App() {
               />
               <DataSection title="Items" data={selectedMonsterData.items} />
               <DataSection title="Skills" data={selectedMonsterData.skills} />
+              <DataSection
+                title="Abilities"
+                data={selectedMonsterData.abilities}
+              />
             </Stack>
           </Box>
         )}
