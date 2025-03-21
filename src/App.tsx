@@ -32,6 +32,13 @@ function App() {
               key={name}
               size={2}
               onClick={() => setSelectedMonsterName(name)}
+              sx={{
+                '&:hover': {
+                  cursor: 'pointer',
+                  backgroundColor: 'primary.400',
+                  borderRadius: 2,
+                },
+              }}
             >
               <Box
                 sx={{
@@ -45,31 +52,16 @@ function App() {
                       ' ',
                       '_'
                     )}_monsters_mhwilds_wiki_guide200px.png)`,
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  '&:hover': {
-                    cursor: 'pointer',
-                    backgroundColor: 'primary.400',
-                  },
-                  height: '100%',
-                  width: '100%',
                   minHeight: '80px',
                 }}
+              />
+              <Typography
+                sx={{
+                  textShadow: '2px 2px 10px rgba(0, 0, 0, 0.9)',
+                }}
               >
-                <Box sx={{}}>
-                  <Typography
-                    sx={{
-                      textShadow: '2px 2px 10px rgba(0, 0, 0, 0.9)',
-                      backgroundColor: 'secondary.main',
-                      p: 0.1,
-                      borderRadius: 2,
-                    }}
-                  >
-                    {name}
-                  </Typography>
-                </Box>
-              </Box>
+                {name}
+              </Typography>
             </Grid2>
           ))}
         </Grid2>
