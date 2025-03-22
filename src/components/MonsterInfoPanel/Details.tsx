@@ -5,7 +5,7 @@ type Props = {
   data: string[];
 };
 
-export const DataSection = ({ title, data }: Props) => {
+export const Details = ({ title, data }: Props) => {
   return (
     <Grid2 sx={{ textAlign: 'left' }}>
       <Typography variant="body2" color="secondary">

@@ -1,13 +1,13 @@
 import { Box, Grid2, Stack, Typography } from '@mui/material';
 
-import { DataSection, LoadoutSection } from './components';
+import { Details, LoadoutSection } from './components/MonsterInfoPanel';
 import { useStore } from '~/store';
 import { monsters, monsterNameList } from '~/data';
 import './App.css';
+import { MonsterSelect } from './components/MonsterSelect';
 
 function App() {
   const selectedMonster = useStore((state) => state.selectedMonster);
-  const setSelectedMonster = useStore((state) => state.setSelectedMonster);
 
   const selectedMonsterData = monsters.find(
     (monster) => monster.name === selectedMonster
@@ -30,42 +30,8 @@ function App() {
       >
         <Grid2 container spacing={1.5}>
           {monsterNameList.map((name) => (
-            <Grid2
-              key={name}
-              size={2}
-              onClick={() => setSelectedMonster(name)}
-              sx={{
-                backgroundColor:
-                  selectedMonster === name ? 'primary.main' : 'none',
-                borderRadius: 2,
-                '&:hover': {
-                  cursor: 'pointer',
-                  backgroundColor: 'secondary.main',
-                },
-              }}
-            >
-              <Box
-                sx={{
-                  p: 1,
-                  m: 1,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                  backgroundImage: `url(https://monsterhunterwilds.wiki.fextralife.com/file/Monster-Hunter-Wilds/${name
-                    .toLowerCase()
-                    .replaceAll(
-                      ' ',
-                      '_'
-                    )}_monsters_mhwilds_wiki_guide200px.png)`,
-                  minHeight: '80px',
-                }}
-              />
-              <Typography
-                sx={{
-                  textShadow: '2px 2px 10px rgba(0, 0, 0, 0.9)',
-                }}
-              >
-                {name}
-              </Typography>
+            <Grid2 key={name} size={2}>
+              <MonsterSelect name={name} />
             </Grid2>
           ))}
         </Grid2>
@@ -117,16 +83,16 @@ function App() {
                 Defense
               </Typography>
 
-              <DataSection
+              <Details
                 title="Weapon Elements"
                 data={selectedMonsterData.weaponElements as string[]}
               />
-              <DataSection
+              <Details
                 title="Resist Elements"
                 data={selectedMonsterData.resistElements as string[]}
               />
-              <DataSection title="Items" data={selectedMonsterData.items} />
-              <DataSection title="Skills" data={selectedMonsterData.skills} />
+              <Details title="Items" data={selectedMonsterData.items} />
+              <Details title="Skills" data={selectedMonsterData.skills} />
               <Typography
                 variant="h6"
                 sx={{
@@ -137,10 +103,7 @@ function App() {
               >
                 Monster Info
               </Typography>
-              <DataSection
-                title="Abilities"
-                data={selectedMonsterData.abilities}
-              />
+              <Details title="Abilities" data={selectedMonsterData.abilities} />
             </Stack>
           </Box>
         )}

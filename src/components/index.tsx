@@ -1,2 +1,1 @@
-export * from './DataSection';
-export * from './LoadoutSection';
+export * from './MonsterSelect';
