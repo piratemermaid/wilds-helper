@@ -36,10 +36,10 @@ function App() {
               sx={{
                 backgroundColor:
                   selectedMonsterName === name ? 'primary.main' : 'none',
+                borderRadius: 2,
                 '&:hover': {
                   cursor: 'pointer',
                   backgroundColor: 'secondary.main',
-                  borderRadius: 2,
                 },
               }}
             >
@@ -79,7 +79,7 @@ function App() {
             }}
           >
             <Stack spacing={1}>
-              <Typography variant="h5" color="primary.100">
+              <Typography variant="h5" color="primary.main">
                 {selectedMonsterData.name}
               </Typography>
               <Typography

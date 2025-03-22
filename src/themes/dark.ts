@@ -1,32 +1,33 @@
 import { createTheme } from '@mui/material';
-import { blue, blueGrey, grey, orange } from '@mui/material/colors';
+import { blueGrey, green, grey, lightBlue } from '@mui/material/colors';
+
+const palette = {
+  primary: lightBlue[500],
+  secondary: green[400],
+  disabled: grey[500],
+  background: blueGrey[900],
+  gray: grey[300],
+};
 
 export const darkTheme = createTheme({
   palette: {
     mode: 'dark',
     primary: {
-      100: blue[500],
-      200: blue[600],
-      300: blue[700],
-      400: blue[800],
-      main: blue[900],
-    },
-    hoverPrimary: {
-      main: blue[300],
+      main: palette.primary,
     },
     secondary: {
-      main: orange[200],
+      main: palette.secondary,
     },
     action: {
-      disabled: grey[500],
+      disabled: palette.disabled,
     },
     background: {
-      default: blueGrey[900],
+      default: palette.background,
     },
   },
   typography: {
     allVariants: {
-      color: grey[300],
+      color: palette.gray,
     },
   },
 });
