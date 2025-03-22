@@ -1,15 +1,16 @@
-import React from 'react';
 import { Box, Grid2, Stack, Typography } from '@mui/material';
 
 import { DataSection, LoadoutSection } from './components';
+import { useStore } from '~/store';
 import { monsters, monsterNameList } from '~/data';
 import './App.css';
 
 function App() {
-  const [selectedMonsterName, setSelectedMonsterName] = React.useState('');
+  const selectedMonster = useStore((state) => state.selectedMonster);
+  const setSelectedMonster = useStore((state) => state.setSelectedMonster);
 
   const selectedMonsterData = monsters.find(
-    (monster) => monster.name === selectedMonsterName
+    (monster) => monster.name === selectedMonster
   );
 
   return (
@@ -32,10 +33,10 @@ function App() {
             <Grid2
               key={name}
               size={2}
-              onClick={() => setSelectedMonsterName(name)}
+              onClick={() => setSelectedMonster(name)}
               sx={{
                 backgroundColor:
-                  selectedMonsterName === name ? 'primary.main' : 'none',
+                  selectedMonster === name ? 'primary.main' : 'none',
                 borderRadius: 2,
                 '&:hover': {
                   cursor: 'pointer',
