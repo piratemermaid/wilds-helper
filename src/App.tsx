@@ -1,6 +1,7 @@
 import React from 'react';
-import { Box, Grid2, List, Stack, Typography } from '@mui/material';
+import { Box, Grid2, Stack, Typography } from '@mui/material';
 
+import { DataSection, LoadoutSection } from './components';
 import { monsters, monsterNameList } from '~/data';
 import './App.css';
 
@@ -33,9 +34,11 @@ function App() {
               size={2}
               onClick={() => setSelectedMonsterName(name)}
               sx={{
+                backgroundColor:
+                  selectedMonsterName === name ? 'primary.main' : 'none',
                 '&:hover': {
                   cursor: 'pointer',
-                  backgroundColor: 'primary.400',
+                  backgroundColor: 'secondary.main',
                   borderRadius: 2,
                 },
               }}
@@ -87,8 +90,32 @@ function App() {
                   fontSize: '1rem',
                 }}
               >
+                Loadouts
+              </Typography>
+              <LoadoutSection
+                title="Items"
+                data={selectedMonsterData.loadouts?.items ?? []}
+              />
+              <LoadoutSection
+                title="Armor"
+                data={selectedMonsterData.loadouts?.armor ?? []}
+              />
+              <LoadoutSection
+                title="Palico Armor"
+                data={selectedMonsterData.loadouts?.palicoArmor ?? []}
+              />
+
+              <Typography
+                variant="h6"
+                sx={{
+                  fontWeight: 600,
+                  textTransform: 'uppercase',
+                  fontSize: '1rem',
+                }}
+              >
                 Defense
               </Typography>
+
               <DataSection
                 title="Weapon Elements"
                 data={selectedMonsterData.weaponElements as string[]}
@@ -120,43 +147,5 @@ function App() {
     </Grid2>
   );
 }
-
-type DataSectionProps = {
-  title: string;
-  data: string[];
-};
-
-const DataSection = ({ title, data }: DataSectionProps) => {
-  return (
-    <Grid2 sx={{ textAlign: 'left' }}>
-      <Typography variant="body2" color="secondary">
-        {title}
-      </Typography>
-      <List>
-        {data.map((item, index) => (
-          <Typography key={index} variant="body2" sx={{ pl: 1 }}>
-            {item}
-          </Typography>
-        ))}
-      </List>
-    </Grid2>
-  );
-};
-
-type MonsterImageProps = { name: string };
-
-const MonsterImage = ({ name }: MonsterImageProps) => {
-  return (
-    <Box sx={{ width: '100%', height: '100%' }}>
-      <img
-        src={`https://monsterhunterwilds.wiki.fextralife.com/file/Monster-Hunter-Wilds/${name
-          .toLowerCase()
-          .replaceAll(' ', '_')}_monsters_mhwilds_wiki_guide200px.png`}
-        alt="Monster"
-        style={{ width: '100%', height: 'auto' }}
-      />
-    </Box>
-  );
-};
 
 export default App;

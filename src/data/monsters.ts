@@ -1,14 +1,3 @@
-type Element = 'fire' | 'water' | 'thunder' | 'ice' | 'dragon';
-
-interface Monster {
-  name: string;
-  weaponElements: Element[];
-  resistElements: Element[];
-  items: string[];
-  skills: string[];
-  abilities: string[];
-}
-
 export const monsters: Monster[] = [
   {
     name: 'Chatacabra',
@@ -30,9 +19,9 @@ export const monsters: Monster[] = [
     name: 'Lala Barina',
     weaponElements: ['fire'],
     resistElements: [],
-    items: ['TODO'],
-    skills: ['TODO'],
-    abilities: ['TODO'],
+    items: [],
+    skills: ['paralysis resist'],
+    abilities: ['Paralysis'],
   },
   {
     name: 'Congalala',
@@ -59,9 +48,14 @@ export const monsters: Monster[] = [
     name: 'Doshaguma',
     weaponElements: ['fire', 'thunder'],
     resistElements: [],
-    items: ['TODO'],
-    skills: ['TODO'],
-    abilities: ['TODO'],
+    items: [],
+    skills: ['Earplugs', 'Tremor Resist'],
+    abilities: ['Weak Roar', 'Minor Tremor'],
+    loadouts: {
+      items: 'Default',
+      armor: 'Best Protecc',
+      palicoArmor: 'Best Protecc',
+    },
   },
   {
     name: 'Uth Duna',
@@ -81,19 +75,29 @@ export const monsters: Monster[] = [
   },
   {
     name: 'Rey Dau',
-    weaponElements: ['TODO'],
-    resistElements: ['TODO'],
-    items: ['TODO'],
-    skills: ['TODO'],
-    abilities: ['TODO'],
+    weaponElements: ['water', 'ice'],
+    resistElements: ['thunder'],
+    items: ['Nulberry'],
+    skills: ['Earplugs', 'Thunder Resist', 'Blight Resist'],
+    abilities: ['Weak Roar', 'Thunderblight'],
+    loadouts: {
+      items: 'Nulberry',
+      armor: 'Thunder protecc',
+      palicoArmor: 'Thunder protecc',
+    },
   },
   {
     name: 'Nerscylla',
-    weaponElements: ['TODO'],
-    resistElements: ['TODO'],
-    items: ['TODO'],
-    skills: ['TODO'],
-    abilities: ['TODO'],
+    weaponElements: ['fire', 'thunder'],
+    resistElements: [],
+    items: ['Antidote', 'Energy Drink', 'Cleanser'],
+    skills: ['Poison Resist', 'Sleep Resist', 'Bind Resist'],
+    abilities: ['Poison', 'Sleep', 'Webbed'],
+    loadouts: {
+      items: 'Nerscylla',
+      armor: 'Nerscylla',
+      palicoArmor: 'Best Protecc',
+    },
   },
   {
     name: 'Hirabami',
@@ -122,16 +126,15 @@ export const monsters: Monster[] = [
   {
     name: 'Guardian Doshaguma',
     weaponElements: ['fire', 'thunder', 'ice', 'dragon'],
-    resistElements: ['TODO'],
-    items: [
-      'earplugs',
-      'adamant seed',
-      'armorskin',
-      'mega armorskin',
-      'hardshell powder',
-    ],
-    skills: ['tremor resist', 'iron skin'],
-    abilities: ['TODO'],
+    resistElements: [],
+    items: ['Adamant Seed', 'Armorskin'],
+    skills: ['Earplugs', 'Tremor Resist', 'Iron Skin'],
+    abilities: ['Weak Roar', 'Minor Tremor', 'Defense Down'],
+    loadouts: {
+      items: 'G Doshaguma',
+      armor: 'Best Protecc',
+      palicoArmor: 'Best Protecc',
+    },
   },
   {
     name: 'Guardian Rathalos',
@@ -152,10 +155,15 @@ export const monsters: Monster[] = [
   {
     name: 'Guardian Ebony Odogaron',
     weaponElements: ['water'],
-    resistElements: ['TODO'],
-    items: ['TODO'],
-    skills: ['TODO'],
-    abilities: ['TODO'],
+    resistElements: ['dragon'],
+    items: ['Nulberry'],
+    skills: ['Earplugs', 'Dragon Resist', 'Blight Resist', 'Bleed Resist'],
+    abilities: ['Weak Roar', 'Dragonblight', 'Bleeding'],
+    loadouts: {
+      items: 'Nulberry',
+      armor: 'Dragon Protecc',
+      palicoArmor: 'Best Protecc',
+    },
   },
   {
     name: 'Xu Wu',
@@ -204,6 +212,11 @@ export const monsters: Monster[] = [
     items: ['earplugs', 'nulberry', 'antidote'],
     skills: ['windproof', 'fire resist', 'blight resist', 'poison resist'],
     abilities: ['TODO'],
+    loadouts: {
+      items: 'Rathian',
+      armor: 'Rathian',
+      palicoArmor: 'Rathian',
+    },
   },
   {
     name: 'Rathalos',
@@ -212,6 +225,14 @@ export const monsters: Monster[] = [
     items: ['TODO'],
     skills: ['TODO'],
     abilities: ['TODO'],
+  },
+  {
+    name: 'Guardian Fulgur Anjanath',
+    weaponElements: ['water', 'dragon', 'ice'],
+    resistElements: ['thunder'],
+    items: ['nulberry'],
+    skills: ['earplugs', 'windproof', 'thunder resist', 'blight resist'],
+    abilities: ['Weak Roar', 'Minor Wind Pressure', 'Thunderblight'],
   },
 
   // {
